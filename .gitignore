@@ -1,0 +1,10 @@
+# Temporary files
+.*.swp
+.*.swo
+*~
+
+# SQLite databases
+*.db
+
+# Node modules
+node_modules
