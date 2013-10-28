@@ -1,15 +1,14 @@
 # Bingo.
 
-## System dependencies:
+## System dependencies
 nodejs
 redis
 sqlite3
 
-## NPM dependencies:
+## NPM dependencies
 express
 jade
 nib
-optimist
 socket.io
 sqlite3
 stylus
