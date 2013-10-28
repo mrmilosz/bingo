@@ -1,5 +1,6 @@
 extend layout
+block head
+	script(type='text/javascript', src='/static/js/views/index.js')
+	
 block content
-	.js-board.board
-		each row in rows
-			.cell(data-term_id=row.id): .label= row.value
+	form.player-name.js-player-name: input(autofocus='autofocus', name='player_name' placeholder='your player name here')

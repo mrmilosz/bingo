@@ -1,0 +1,102 @@
+@import 'nib'
+@import 'nib/gradients'
+
+global-reset()
+
+*,*::before,*::after
+	box-sizing  border-box
+	user-select none
+
+html,body
+	padding 0
+	margin  0
+	height  100%
+
+body
+	text-align  center
+	font-size   0
+	white-space nowrap
+
+	&::before
+		content        ''
+		display        inline-block
+		height         100%
+		vertical-align middle
+	
+	.content
+		white-space    normal
+		display        inline-block
+		vertical-align middle
+		font           16px monospace
+
+
+.player-name
+	input
+		font          inherit
+		border        none
+		padding       10px
+		border-radius 5px
+	
+		&:hover,&:active,&:focus
+			outline    none
+			box-shadow 0 0 10px rgba(black, 0.5)
+
+		transition box-shadow .3s
+
+
+.board
+	text-align  left
+	font-size   0
+	width       500px
+
+	.cell
+		text-align    center
+		font          12px monospace
+		color         black
+		text-shadow   1px 1px 0 rgba(white, 0.3)
+		border-radius 50px
+		display       inline-block
+		width         100px
+		height        100px
+		padding       10px
+
+		&::before
+			content        ''
+			display        inline-block
+			height         100%
+			vertical-align middle
+
+		full-gradient   = radial-gradient(#f00      , #f99      )
+		heavy-gradient  = radial-gradient(#f00 + 25%, #f99 + 25%)
+		medium-gradient = radial-gradient(#f00 + 50%, #f99 + 50%)
+		light-gradient  = radial-gradient(#f00 + 90%, #f99 + 95%)
+
+		&:hover
+			background medium-gradient
+
+		&:active
+			background heavy-gradient
+
+		&.called
+			background full-gradient
+
+			&:active
+				background heavy-gradient
+
+		&.hinted
+			background light-gradient
+
+			&:hover
+				background medium-gradient
+
+			&:active
+				background heavy-gradient
+
+			&.called
+				background full-gradient
+
+		.label
+			white-space    normal
+			display        inline-block
+			vertical-align middle
+			cursor         default

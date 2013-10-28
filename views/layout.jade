@@ -2,9 +2,10 @@
 html
 	head
 		title Bingo
-		script(type='text/javascript', src='/static/es5-sham.min.js')
+		script(type='text/javascript', src='/static/js/es5-sham.min.js')
 		script(type='text/javascript', src='/socket.io/socket.io.js')
-		script(type='text/javascript', src='/static/main.js')
-		link(rel='stylesheet', href='/static/style.css')
+		link(rel='stylesheet', href='/static/css/style.css')
+		block head
 	body
-		block content
+		.content
+			block content
