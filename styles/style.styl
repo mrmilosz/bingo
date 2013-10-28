@@ -1,0 +1,45 @@
+@import 'nib'
+
+global-reset()
+
+*,
+*::before,
+*::after
+	box-sizing: border-box
+
+html,
+body
+	padding 0
+	margin 0
+	height 100%
+
+body
+	text-align center
+	font-size 0
+	white-space nowrap
+
+body::before
+	content ''
+	display inline-block
+	height 100%
+	vertical-align middle
+
+.board
+	display inline-block
+	vertical-align middle
+	font 12px monospace
+	white-space normal
+
+.board table
+	border-spacing 0
+	border-collapse collapse
+	table-layout fixed
+	width 500px
+
+.board table tr td
+	padding 10px
+	border 1px solid black
+	text-align center
+	vertical-align middle
+	width 100px
+	height 100px

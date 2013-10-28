@@ -8,3 +8,9 @@
 
 # Node modules
 node_modules
+
+# Configuration files
+.exrc
+
+# Compiled files
+static/*.css
