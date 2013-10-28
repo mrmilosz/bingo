@@ -2,22 +2,15 @@
 document.addEventListener('DOMContentLoaded', function() {
    var socket = io.connect('ws://:8003');
 
-   socket.on('response', function(data) {
-      document.querySelector('.js-board').innerHTML = '<table>' + data.map(function(row, index) {
-         var result = '';
-         if (index % 5 === 0) {
-            result += '<tr>';
-         }
-
-         result += '<td>' + row.value + '</td>';
-
-         if (index % 5 === 4) {
-            result += '</tr>';
-         }
-
-         return result;
-      }).join('') + '</table>';
+   socket.on('call', function(data) {
+      Array.prototype.forEach.call(document.querySelectorAll('.cell[data-term_id="' + data.term_id + '"]'), function(cellElement) {
+         cellElement.classList.add('called');
+      });
    });
 
-   socket.emit('request', { seed: location.pathname.substr(1) });
+   Array.prototype.forEach.call(document.querySelectorAll('.cell'), function(cellElement) {
+      cellElement.addEventListener('click', function() {
+         socket.emit('call', { term_id: this.getAttribute('data-term_id') });
+      });
+   });
 });

@@ -1,3 +1,5 @@
 extend layout
 block content
 	.js-board.board
+		each row in rows
+			.cell(data-term_id=row.id): .label= row.value
